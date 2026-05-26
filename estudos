@@ -1,0 +1,14 @@
+Mem e usado para controlar a memoria.
+Como não temos o '\0' para nos dizer onde parar, todas essas funções obrigatoriamente recebem um tamanho em bytes (size_t n) para saber até onde podem ir.
+
+O void * é um ponteiro genérico. Ele serve para que você possa passar qualquer coisa para a função (uma array de int, uma string de char, uma estrutura de dados, etc.).
+
+Porém, em C, nós não podemos fazer aritmética ou ler dados direto de um void *, porque o compilador não sabe qual é o tamanho do que está ali dentro. Para resolver isso e conseguir andar de byte em byte (de 1 em 1), a regra de ouro dentro dessas funções é fazer um typecast (conversão) do ponteiro para unsigned char *.
+
+A Diferença crucial entre memcpy e strlcpy:
+Lembra que na ft_strlcpy a cópia parava assim que encontrava um \0? Na ft_memcpy não existe interrupção. Se você pedir para copiar 10 bytes, ela vai copiar 10 bytes cegamente, mesmo que no meio do caminho haja três \0, números ou lixo de memória.
+
+Porque criamos variaves mas no final da funcao a gente retorna o ponteiro?
+
+Se você retornasse indice modificado, quem chamou a sua função perderia a referência de onde a string/array começava, gerando vazamento de memória (memory leak) ou travamentos no programa.
+Como a variável dst ficou intacta e congelada no endereço inicial desde o começo da função, retornar a variavel é a garantia absoluta de que você está devolvendo o mapa com o endereço exato do início do bloco que acabou de ser copiado.
