@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yvasques <yvasques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/25 11:27:18 by yvasques          #+#    #+#             */
-/*   Updated: 2026/05/27 08:18:38 by yvasques         ###   ########.fr       */
+/*   Created: 2026/05/27 10:10:33 by yvasques          #+#    #+#             */
+/*   Updated: 2026/05/27 12:05:35 by yvasques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	num;
-	int	signal;
-	int	i;
+	void	*ptr;
 
-	num = 0;
-	signal = 1;
-	i = 0;
-	while ((str[i] == ' ') || (str[i] >= 9) && (str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			signal *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	return (num * signal);
+	ptr = malloc(count * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }
+//REVISAR TRATAMENTO DE ERROS

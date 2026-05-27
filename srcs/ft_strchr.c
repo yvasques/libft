@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yvasques <yvasques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/25 11:27:18 by yvasques          #+#    #+#             */
-/*   Updated: 2026/05/27 08:18:38 by yvasques         ###   ########.fr       */
+/*   Created: 2026/05/27 09:24:20 by yvasques          #+#    #+#             */
+/*   Updated: 2026/05/27 10:19:44 by yvasques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	int	num;
-	int	signal;
-	int	i;
+	size_t	i;
 
-	num = 0;
-	signal = 1;
 	i = 0;
-	while ((str[i] == ' ') || (str[i] >= 9) && (str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (s[i] != '\0')
 	{
-		if (str[i] == '-')
-			signal *= -1;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	return (num * signal);
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
