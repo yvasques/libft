@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yvasques <yvasques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/25 11:27:18 by yvasques          #+#    #+#             */
-/*   Updated: 2026/05/27 08:18:38 by yvasques         ###   ########.fr       */
+/*   Created: 2026/05/28 09:07:23 by yvasques          #+#    #+#             */
+/*   Updated: 2026/05/28 10:39:34 by yvasques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	num;
-	int	signal;
-	int	i;
+	size_t	start;
+	size_t	end;
+	char	*trimmed;
 
-	num = 0;
-	signal = 1;
-	i = 0;
-	while ((str[i] == ' ') || (str[i] >= 9) && (str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			signal *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	return (num * signal);
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end]))
+		end--;
+	trimmed = ft_substr(s1, start, end - start);
+	return (trimmed);
 }

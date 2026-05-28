@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yvasques <yvasques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 10:28:37 by yvasques          #+#    #+#             */
-/*   Updated: 2026/05/26 11:05:03 by yvasques         ###   ########.fr       */
+/*   Created: 2026/05/25 11:27:18 by yvasques          #+#    #+#             */
+/*   Updated: 2026/05/28 10:38:48 by yvasques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+int	ft_atoi(const char *str)
 {
-	
+	int	num;
+	int	signal;
+	int	i;
+
+	num = 0;
+	signal = 1;
+	i = 0;
+	while ((str[i] == ' ') || ((str[i] >= 9) && (str[i] <= 13)))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			signal *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = (num * 10) + (str[i] - '0');
+		i++;
+	}
+	return (num * signal);
 }
