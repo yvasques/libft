@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvasques <yvasques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yannvasques <yannvasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 09:51:10 by yvasques          #+#    #+#             */
-/*   Updated: 2026/05/27 10:18:29 by yvasques         ###   ########.fr       */
+/*   Updated: 2026/06/01 15:09:44 by yannvasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	last_occ = NULL;
 	while (s[i] != '\0')
-	{	
+	{
 		if (s[i] == (char)c)
 			last_occ = (char *)&s[i];
 		i++;
