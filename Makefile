@@ -6,7 +6,7 @@
 #    By: yvasques <yvasques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/20 08:13:53 by yvasques          #+#    #+#              #
-#    Updated: 2026/05/28 10:50:01 by yvasques         ###   ########.fr        #
+#    Updated: 2026/06/04 07:57:57 by yvasques         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,21 @@ SRC	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
       ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
       ft_atoi.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c
 OBJS	= $(SRC:.c=.o)
+
 all: $(NAME)
+
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
-%.o: %.c 
+	
+%.o:%.c libft.h 
 	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	$(RM) $(OBJS)
+
 fclean: clean
 	$(RM) $(NAME)
+
 re: fclean all
+
 .PHONY: all clean fclean re
