@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by yvasques.*
+*This project has been created as part of the 42 curriculum by yvasques*
 
 ---
 
@@ -82,5 +82,6 @@ To implement this library in your own C applications, include the primary header
 ### Resources
 
 Classic References
-GNU C Library Documentation — Standard documentation on behavior of libc functions.
-Singly Linked Lists Explained — Data structure conceptual design guidelines.
+- [GNU C Library Documentation](https://www.gnu.org/software/libc/manual/) — Standard detailed documentation on the behavior of `libc` functions.
+- [Man7.org Online Manual Pages](https://man7.org/linux/man-pages/) — Official Linux manual pages for every standard function reimplemented in this project.
+- [C Standard Library Reference (cppreference.com)](https://en.cppreference.com/w/c) — Comprehensive reference for all standard C types, macros, and functions.
