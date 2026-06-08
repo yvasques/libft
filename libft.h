@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvasques <yvasques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yannvasques <yannvasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 08:23:52 by yvasques          #+#    #+#             */
-/*   Updated: 2026/06/04 11:33:51 by yvasques         ###   ########.fr       */
+/*   Updated: 2026/06/04 21:12:33 by yannvasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_list
 /* ************************************************************************** */
 /* Part 1 - Libc functions                                                  */
 /* ************************************************************************** */
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -52,6 +53,7 @@ char	*ft_strdup(const char *str);
 /* ************************************************************************** */
 /* Part 2 - Additional functions                                            */
 /* ************************************************************************** */
+
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);

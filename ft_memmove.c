@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvasques <yvasques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yannvasques <yannvasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:52:28 by yvasques          #+#    #+#             */
-/*   Updated: 2026/05/26 10:26:25 by yvasques         ###   ########.fr       */
+/*   Updated: 2026/06/06 11:28:24 by yannvasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-// #include <string.h>
-// int	main(void)
-// {
-// 	// Criamos uma array com espaço de sobra
-// 	char	str1[20] = "42_Camper";
-// 	char	str2[20] = "42_Camper";
-// 	printf("--- TESTE DE SOBREPOSIÇÃO (OVERLAP) ---\n");
-// 	printf("String original: %s\n\n", str1);
-// 	// Cenário: Destino está DEPOIS da origem na memória
-// 	// Queremos pegar "42_Camper" (que começa no índice 0)
-// 	// E copiar 9 bytes para o índice 3 (onde está o 'C')
-// 	// Isso vai forçar o seu 'if (d > s)' a entrar em ação!
-// 	ft_memmove(&str1[3], &str1[0], 9);
-// 	printf("Com a sua ft_memmove:   %s\n", str1);
-// 	// Vamos fazer o mesmo teste com a memmove original do C para comparar
-// 	memmove(&str2[3], &str2[0], 9);
-// 	printf("Com a memmove original: %s\n", str2);
-// 	return (0);
-// }
