@@ -76,10 +76,9 @@ The project is governed by a strict `Makefile` designed to compile object module
 To implement this library in your own C applications, include the primary header file in your code and link the static file `.a` during compilation time:
 
 1. Add the header call in your files:
-```c
 #include "libft.h"
 
-### Resources
+###	Resources
 
 Classic References
 - [GNU C Library Documentation](https://www.gnu.org/software/libc/manual/) — Standard detailed documentation on the behavior of `libc` functions.
